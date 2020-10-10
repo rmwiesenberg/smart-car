@@ -16,7 +16,7 @@ def control():
 
     rospy.init_node('keyboard_control', anonymous=True)
     while not rospy.is_shutdown():
-        key = input("Command the Vehicle (WASD)")
+        key = input("Command the Vehicle (WASD): ")
         if key in ["w"]:
             cmd_fwd = 1
         elif key in ["s"]:
@@ -32,7 +32,7 @@ def control():
 
         wheel.publish(cmd_left)
         drive.publish(cmd_fwd)
-        print(f"FWD: {cmd_fwd}, LEFT:: {cmd_left}")
+        print(f"FWD: {cmd_fwd}, LEFT: {cmd_left}")
 
 
 if __name__ == '__main__':
